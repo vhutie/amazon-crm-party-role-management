@@ -31,7 +31,7 @@ import io.opentracing.contrib.spring.web.autoconfig.WebTracingConfiguration;
 @Configuration
 public class TracingConfiguration {
     private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(TracingConfiguration.class);
-    private static final String SERVICE_NAME = "amazon-crm-party-role-management";
+    private static final String SERVICE_NAME = "amazon-crm-party-role";
 
     @Bean
     public Tracer tracer() {
@@ -77,7 +77,7 @@ public class TracingConfiguration {
                 .client(new TracingClient(new ApacheHttpClient(HttpClientBuilder.create().build()), tracer))
                 .logger(new Logger.ErrorLogger()).logLevel(Logger.Level.BASIC)
                 .decoder(new JacksonDecoder())
-                .target(PartyRoleService.class, "http://amazon-crm-party-role-management:8080/",
+                .target(PartyRoleService.class, "http://amazon-crm-party-role:8080/",
                         () -> Collections.singletonList("Party response (fallback)"));
     }
 }
