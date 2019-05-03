@@ -134,7 +134,7 @@ public class PartyRole   {
   @Valid
   @OneToMany(fetch = FetchType.LAZY)
  	@JoinTable(schema = "party_schema", name = "PR_RELATEDPARTY", joinColumns = {
- 			@JoinColumn(name = "PARTYROLE_ID") }, inverseJoinColumns = { @JoinColumn(name = "RELATEDPARTY_ID") })
+ 			@JoinColumn(name = "PARTYROLE_ID"),@JoinColumn(name = "OTHER_ID") }, inverseJoinColumns = { @JoinColumn(name = "RELATEDPARTY_ID") })
   private List<RelatedPartyRef> relatedParty = null;
 
   public PartyRole baseType(String baseType) {
