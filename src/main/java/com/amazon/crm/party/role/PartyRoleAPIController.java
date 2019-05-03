@@ -37,7 +37,7 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/api")
-public class PartyRoleController {
+public class PartyRoleAPIController {
 
     @Autowired
     private PartyRoleService partyService;
