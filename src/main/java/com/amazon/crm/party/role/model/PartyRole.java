@@ -1,5 +1,6 @@
 package com.amazon.crm.party.role.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -34,7 +35,11 @@ import io.swagger.annotations.ApiModelProperty;
 @Table(name="party_role", schema="pr_schema")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-01T13:16:10.737Z")
 
-public class PartyRole   {
+public class PartyRole  implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue
 	private Long tableId;

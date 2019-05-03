@@ -1,5 +1,6 @@
 package com.amazon.crm.party.role.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import javax.validation.constraints.NotNull;
@@ -16,7 +17,11 @@ import io.swagger.annotations.ApiModelProperty;
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-01T13:16:10.737Z")
 
-public class EventSubscriptionInput   {
+public class EventSubscriptionInput   implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
   @JsonProperty("callback")
   private String callback = null;
 

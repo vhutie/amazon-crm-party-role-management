@@ -1,5 +1,6 @@
 package com.amazon.crm.party.role.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -25,7 +26,11 @@ import io.swagger.annotations.ApiModelProperty;
 @Entity
 @Table(name="agreement_ref", schema="pr_schema")
 @SequenceGenerator(name = "ar_seq", sequenceName = "ar_seq", allocationSize = 1)
-public class AgreementRef   {
+public class AgreementRef   implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue
 	private Long tableId;

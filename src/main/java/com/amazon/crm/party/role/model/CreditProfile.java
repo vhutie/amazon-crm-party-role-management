@@ -1,5 +1,6 @@
 package com.amazon.crm.party.role.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -28,7 +29,11 @@ import io.swagger.annotations.ApiModelProperty;
 @Entity
 @Table(name="credit_profile", schema="pr_schema")
 @SequenceGenerator(name = "cp_seq", sequenceName = "cp_seq", allocationSize = 1)
-public class CreditProfile   {
+public class CreditProfile   implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue
 	private Long tableId;

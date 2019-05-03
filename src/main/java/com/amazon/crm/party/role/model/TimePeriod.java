@@ -1,5 +1,6 @@
 package com.amazon.crm.party.role.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -27,7 +28,11 @@ import io.swagger.annotations.ApiModelProperty;
 @Entity
 @Table(name="time_period", schema="pr_schema")
 @SequenceGenerator(name = "tp_seq", sequenceName = "tp_seq", allocationSize = 1)
-public class TimePeriod   {
+public class TimePeriod   implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue
 	private Long tableId;
