@@ -4,7 +4,7 @@
   <artifactId>amazon-crm-party-role-management</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
-<name>amazon-crm-party-role-management</name>
+<name>amazon-crm-party-role</name>
     	<properties>
 		<!-- Explicitly declaring the source encoding eliminates the following
 			message: -->
