@@ -40,9 +40,7 @@ public class PartyRole  implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	@Id
-	@GeneratedValue
-	private Long tableId;
+	
   @JsonProperty("@baseType")
   @Column(nullable = true)
   private String baseType = null;
@@ -97,49 +95,49 @@ public class PartyRole  implements Serializable {
   @Valid
   @OneToMany(fetch = FetchType.LAZY)
  	@JoinTable(schema = "pr_schema", name = "PR_ACCOUNT", joinColumns = {
- 			@JoinColumn(name = "PARTYROLE_ID"),@JoinColumn(name = "OTHER_ID") }, inverseJoinColumns = { @JoinColumn(name = "ACCOUNT_ID") })
+ 			@JoinColumn(name = "PARTYROLE_ID") }, inverseJoinColumns = { @JoinColumn(name = "ACCOUNT_ID") })
   private List<AccountRef> account = null;
 
   @JsonProperty("paymentMethod")
   @Valid
   @OneToMany(fetch = FetchType.LAZY)
  	@JoinTable(schema = "party_schema", name = "PR_PAYMENTMETHOD", joinColumns = {
- 			@JoinColumn(name = "PARTYROLE_ID"),@JoinColumn(name = "OTHER_ID") }, inverseJoinColumns = { @JoinColumn(name = "PAYMENTMETHOD_ID") })
+ 			@JoinColumn(name = "PARTYROLE_ID") }, inverseJoinColumns = { @JoinColumn(name = "PAYMENTMETHOD_ID") })
   private List<PaymentMethodRef> paymentMethod = null;
 
   @JsonProperty("contactMedium")
   @Valid
   @OneToMany(fetch = FetchType.LAZY)
  	@JoinTable(schema = "party_schema", name = "PR_CONTACTMEDIUM", joinColumns = {
- 			@JoinColumn(name = "PARTYROLE_ID"),@JoinColumn(name = "OTHER_ID") }, inverseJoinColumns = { @JoinColumn(name = "CONTACTMEDIUM_ID") })
+ 			@JoinColumn(name = "PARTYROLE_ID")}, inverseJoinColumns = { @JoinColumn(name = "CONTACTMEDIUM_ID") })
   private List<ContactMedium> contactMedium = null;
 
   @JsonProperty("characteristic")
   @Valid
   @OneToMany(fetch = FetchType.LAZY)
  	@JoinTable(schema = "party_schema", name = "PR_CHARACTERISTIC", joinColumns = {
- 			@JoinColumn(name = "PARTYROLE_ID"),@JoinColumn(name = "OTHER_ID") }, inverseJoinColumns = { @JoinColumn(name = "CHARACTERISTIC_ID") })
+ 			@JoinColumn(name = "PARTYROLE_ID") }, inverseJoinColumns = { @JoinColumn(name = "CHARACTERISTIC_ID") })
   private List<Characteristic> characteristic = null;
 
   @JsonProperty("creditProfile")
   @Valid
   @OneToMany(fetch = FetchType.LAZY)
  	@JoinTable(schema = "party_schema", name = "PR_CREATEPROFILE", joinColumns = {
- 			@JoinColumn(name = "PARTYROLE_ID") ,@JoinColumn(name = "OTHER_ID")}, inverseJoinColumns = { @JoinColumn(name = "CREATEPROFILE_ID") })
+ 			@JoinColumn(name = "PARTYROLE_ID") }, inverseJoinColumns = { @JoinColumn(name = "CREATEPROFILE_ID") })
   private List<CreditProfile> creditProfile = null;
 
   @JsonProperty("agreement")
   @Valid
   @OneToMany(fetch = FetchType.LAZY)
  	@JoinTable(schema = "party_schema", name = "PR_AGREEMENT", joinColumns = {
- 			@JoinColumn(name = "PARTYROLE_ID"),@JoinColumn(name = "OTHER_ID") }, inverseJoinColumns = { @JoinColumn(name = "AGREEMENT_ID") })
+ 			@JoinColumn(name = "PARTYROLE_ID") }, inverseJoinColumns = { @JoinColumn(name = "AGREEMENT_ID") })
   private List<AgreementRef> agreement = null;
 
   @JsonProperty("relatedParty")
   @Valid
   @OneToMany(fetch = FetchType.LAZY)
  	@JoinTable(schema = "party_schema", name = "PR_RELATEDPARTY", joinColumns = {
- 			@JoinColumn(name = "PARTYROLE_ID"),@JoinColumn(name = "OTHER_ID") }, inverseJoinColumns = { @JoinColumn(name = "RELATEDPARTY_ID") })
+ 			@JoinColumn(name = "PARTYROLE_ID") }, inverseJoinColumns = { @JoinColumn(name = "RELATEDPARTY_ID") })
   private List<RelatedPartyRef> relatedParty = null;
 
   public PartyRole baseType(String baseType) {
