@@ -80,7 +80,7 @@ public class PartyRoleController {
     public PartyRole updatePartyRole(@RequestBody PartyRoleUpdate partyRoleUpdate,@PathVariable("id") String id) {
     		Optional<PartyRole>  partyRoleOptional = partyRoleRepository.findById(id);
       	PartyRole mappedPartyRole = PartyRoleController.mapPartyRoleToPartyUpdate(partyRoleOptional.get(),partyRoleUpdate);
-    		PartyRole savedIndividual = partyRoleRepository.save(mappedPartyRole,id);
+    		PartyRole savedIndividual = partyRoleRepository.save(mappedPartyRole);
         return savedIndividual;
     }
     

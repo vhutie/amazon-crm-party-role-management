@@ -13,5 +13,5 @@ public interface PartyRoleRepository  extends JpaRepository<PartyRole, String>{
 	public List<PartyRole> findAllByOrderByNameAsc();
 	public Optional<PartyRole> findById(String id);
 	public void delete(String id);
-	public PartyRole save(PartyRole partyRole,String id);
+//	public PartyRole save(PartyRole partyRole,String id);
 }
